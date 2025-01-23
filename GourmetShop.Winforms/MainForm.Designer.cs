@@ -1,4 +1,6 @@
-﻿namespace GourmetShop.Winforms
+﻿using System;
+
+namespace GourmetShop.Winforms
 {
     partial class MainForm
     {
@@ -96,7 +98,7 @@
             // viewProductsToolStripMenuItem
             // 
             this.viewProductsToolStripMenuItem.Name = "viewProductsToolStripMenuItem";
-            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewProductsToolStripMenuItem.Text = "View Products";
             this.viewProductsToolStripMenuItem.Click += new System.EventHandler(this.viewProductsToolStripMenuItem_Click);
             // 
@@ -112,8 +114,9 @@
             // viewSuppliersToolStripMenuItem
             // 
             this.viewSuppliersToolStripMenuItem.Name = "viewSuppliersToolStripMenuItem";
-            this.viewSuppliersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.viewSuppliersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewSuppliersToolStripMenuItem.Text = "View Suppliers";
+            this.viewSuppliersToolStripMenuItem.Click += new System.EventHandler(this.viewSuppliersToolStripMenuItem_Click);
             // 
             // dvgProducts
             // 
@@ -285,6 +288,7 @@
             this.btnEditProduct.TabIndex = 4;
             this.btnEditProduct.Text = "Edit Product";
             this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnDeleteProduct
             // 
@@ -294,6 +298,7 @@
             this.btnDeleteProduct.TabIndex = 5;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnAddSupplier
             // 
@@ -313,6 +318,7 @@
             this.btnEditSupplier.TabIndex = 7;
             this.btnEditSupplier.Text = "Edit Supplier";
             this.btnEditSupplier.UseVisualStyleBackColor = true;
+            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // btnDeleteSupplier
             // 
@@ -322,6 +328,7 @@
             this.btnDeleteSupplier.TabIndex = 8;
             this.btnDeleteSupplier.Text = "Delete Supplier";
             this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
             // 
             // tctSupplierName
             // 
@@ -329,6 +336,7 @@
             this.tctSupplierName.Name = "tctSupplierName";
             this.tctSupplierName.Size = new System.Drawing.Size(100, 20);
             this.tctSupplierName.TabIndex = 9;
+            this.tctSupplierName.TextChanged += new System.EventHandler(this.tctSupplierName_TextChanged);
             // 
             // xtxProductName
             // 
@@ -369,6 +377,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

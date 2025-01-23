@@ -47,7 +47,7 @@ namespace GourmetShop.DataAccess.Repositories
             return products;
         }
 
-        public void Add(Product product)
+        public void AddProduct(Product product)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -63,44 +63,61 @@ namespace GourmetShop.DataAccess.Repositories
             }
         }
 
-        public void Update(Product product)
+        public void UpdateProduct(Product product)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                using (var command = new SqlCommand("UpdateProduct", connection))
-                {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", product.Id);
-                    command.Parameters.AddWithValue("@Name", product.ProductName);
-                    command.Parameters.AddWithValue("@Price", product.UnitPrice);
+            //using (var connection = new SqlConnection(_connectionString))
+            //{
+            //    using (var command = new SqlCommand("UpdateProduct", connection))
+            //    {
+            //        command.CommandType = System.Data.CommandType.StoredProcedure;
+            //        command.Parameters.AddWithValue("@Id", product.Id);
+            //        command.Parameters.AddWithValue("@Name", product.ProductName);
+            //        command.Parameters.AddWithValue("@Price", product.UnitPrice);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-            }
+            //        connection.Open();
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
         }
 
-        public void Delete(int id)
+        public void DeleteProduct(int id)
         {
+            //using (var connection = new SqlConnection(_connectionString))
+            //{
+            //    using (var command = new SqlCommand("DeleteProduct", connection))
+            //    {
+            //        command.CommandType = System.Data.CommandType.StoredProcedure;
+            //        command.Parameters.AddWithValue("@Id", id);
+
+            //        connection.Open();
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
+        }
+        public Product GetProductById(int id)
+        {
+            Product entity = default(Product);
+
             using (var connection = new SqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand("DeleteProduct", connection))
-                {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", id);
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = $"SELECT * FROM Product WHERE Id = @Id";
+                command.Parameters.AddWithValue("@Id", id);
+                var reader = command.ExecuteReader();
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                if (reader.Read())
+                {
+                    entity = MapToEntity(reader);
                 }
             }
-        }
 
-        public object GetAllProducts()
-        {
+            return entity;
+
             throw new NotImplementedException();
         }
 
-        public void AddProduct(Product newProduct)
+        public object GetAllProducts()
         {
             throw new NotImplementedException();
         }

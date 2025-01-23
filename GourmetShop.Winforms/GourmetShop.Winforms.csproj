@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupplierForm.Designer.cs">
+      <DependentUpon>AddSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GourmetShopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSupplierForm.resx">
+      <DependentUpon>AddSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

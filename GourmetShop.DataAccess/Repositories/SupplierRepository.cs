@@ -47,7 +47,7 @@ namespace GourmetShop.DataAccess.Repositories
             return suppliers;
         }
 
-        public void Add(Supplier supplier)
+        public void AddSupplier(Supplier supplier)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -63,36 +63,57 @@ namespace GourmetShop.DataAccess.Repositories
             }
         }
 
-        public void Update(Supplier supplier)
+        public void UpdateSupplier(Supplier supplier)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                using (var command = new SqlCommand("UpdateSupplier", connection))
-                {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", supplier.Id);
-                    command.Parameters.AddWithValue("@Name", supplier.CompanyName);
-                    command.Parameters.AddWithValue("@Contact", supplier.ContactName);
+            //using (var connection = new SqlConnection(_connectionString))
+            //{
+            //    using (var command = new SqlCommand("UpdateSupplier", connection))
+            //    {
+            //        command.CommandType = System.Data.CommandType.StoredProcedure;
+            //        command.Parameters.AddWithValue("@Id", supplier.Id);
+            //        command.Parameters.AddWithValue("@Name", supplier.CompanyName);
+            //        command.Parameters.AddWithValue("@Contact", supplier.ContactName);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-            }
+            //        connection.Open();
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
         }
 
-        public void Delete(int id)
+        public void DeleteSupplier(int id)
         {
+            //using (var connection = new SqlConnection(_connectionString))
+            //{
+            //    using (var command = new SqlCommand("DeleteSupplier", connection))
+            //    {
+            //        command.CommandType = System.Data.CommandType.StoredProcedure;
+            //        command.Parameters.AddWithValue("@Id", id);
+
+            //        connection.Open();
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
+        }
+        public Supplier GetSupplierById(int id)
+        {
+            Supplier entity = default(Supplier);
+
             using (var connection = new SqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand("DeleteSupplier", connection))
-                {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", id);
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = $"SELECT * FROM Supplier WHERE Id = @Id";
+                command.Parameters.AddWithValue("@Id", id);
+                var reader = command.ExecuteReader();
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                if (reader.Read())
+                {
+                    entity = MapToEntity(reader);
                 }
             }
+
+            return entity;
+            throw new NotImplementedException();
         }
     }
 }
