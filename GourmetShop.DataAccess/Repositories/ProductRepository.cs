@@ -117,8 +117,25 @@ namespace GourmetShop.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public object GetAllProducts()
+        public object GetAllProducts(int id)
         {
+            Product entity = default(Product);
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = $"SELECT * FROM Product WHERE Id = @Id";
+                command.Parameters.AddWithValue("@Id", id);
+                var reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    entity = MapToEntity(reader);
+                }
+            }
+
+            return entity;
             throw new NotImplementedException();
         }
     }
