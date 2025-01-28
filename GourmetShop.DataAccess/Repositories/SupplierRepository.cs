@@ -54,6 +54,7 @@ namespace GourmetShop.DataAccess.Repositories
                 using (var command = new SqlCommand("InsertSupplier", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", supplier.Id);
                     command.Parameters.AddWithValue("@Name", supplier.CompanyName);
                     command.Parameters.AddWithValue("@Contact", supplier.ContactName);
 

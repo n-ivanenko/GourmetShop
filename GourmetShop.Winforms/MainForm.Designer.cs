@@ -98,7 +98,7 @@ namespace GourmetShop.Winforms
             // viewProductsToolStripMenuItem
             // 
             this.viewProductsToolStripMenuItem.Name = "viewProductsToolStripMenuItem";
-            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.viewProductsToolStripMenuItem.Text = "View Products";
             this.viewProductsToolStripMenuItem.Click += new System.EventHandler(this.viewProductsToolStripMenuItem_Click);
             // 
@@ -114,7 +114,7 @@ namespace GourmetShop.Winforms
             // viewSuppliersToolStripMenuItem
             // 
             this.viewSuppliersToolStripMenuItem.Name = "viewSuppliersToolStripMenuItem";
-            this.viewSuppliersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewSuppliersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.viewSuppliersToolStripMenuItem.Text = "View Suppliers";
             this.viewSuppliersToolStripMenuItem.Click += new System.EventHandler(this.viewSuppliersToolStripMenuItem_Click);
             // 
@@ -132,7 +132,7 @@ namespace GourmetShop.Winforms
             this.dvgProducts.DataSource = this.productBindingSource;
             this.dvgProducts.Location = new System.Drawing.Point(12, 68);
             this.dvgProducts.Name = "dvgProducts";
-            this.dvgProducts.Size = new System.Drawing.Size(644, 64);
+            this.dvgProducts.Size = new System.Drawing.Size(644, 122);
             this.dvgProducts.TabIndex = 1;
             this.dvgProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgProducts_CellContentClick);
             // 
@@ -206,9 +206,9 @@ namespace GourmetShop.Winforms
             this.phoneDataGridViewTextBoxColumn,
             this.faxDataGridViewTextBoxColumn});
             this.dvgSupplier.DataSource = this.supplierBindingSource;
-            this.dvgSupplier.Location = new System.Drawing.Point(12, 203);
+            this.dvgSupplier.Location = new System.Drawing.Point(12, 282);
             this.dvgSupplier.Name = "dvgSupplier";
-            this.dvgSupplier.Size = new System.Drawing.Size(644, 60);
+            this.dvgSupplier.Size = new System.Drawing.Size(644, 127);
             this.dvgSupplier.TabIndex = 2;
             this.dvgSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSupplier_CellContentClick);
             // 
@@ -272,7 +272,7 @@ namespace GourmetShop.Winforms
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(12, 138);
+            this.btnAddProduct.Location = new System.Drawing.Point(12, 196);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(75, 23);
             this.btnAddProduct.TabIndex = 3;
@@ -282,7 +282,7 @@ namespace GourmetShop.Winforms
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(93, 138);
+            this.btnEditProduct.Location = new System.Drawing.Point(93, 196);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(75, 23);
             this.btnEditProduct.TabIndex = 4;
@@ -292,7 +292,7 @@ namespace GourmetShop.Winforms
             // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(174, 138);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(174, 196);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(90, 23);
             this.btnDeleteProduct.TabIndex = 5;
@@ -302,7 +302,7 @@ namespace GourmetShop.Winforms
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(12, 269);
+            this.btnAddSupplier.Location = new System.Drawing.Point(12, 415);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnAddSupplier.TabIndex = 6;
@@ -312,7 +312,7 @@ namespace GourmetShop.Winforms
             // 
             // btnEditSupplier
             // 
-            this.btnEditSupplier.Location = new System.Drawing.Point(93, 269);
+            this.btnEditSupplier.Location = new System.Drawing.Point(93, 415);
             this.btnEditSupplier.Name = "btnEditSupplier";
             this.btnEditSupplier.Size = new System.Drawing.Size(75, 23);
             this.btnEditSupplier.TabIndex = 7;
@@ -322,7 +322,7 @@ namespace GourmetShop.Winforms
             // 
             // btnDeleteSupplier
             // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(175, 269);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(174, 415);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(90, 23);
             this.btnDeleteSupplier.TabIndex = 8;
@@ -332,7 +332,7 @@ namespace GourmetShop.Winforms
             // 
             // tctSupplierName
             // 
-            this.tctSupplierName.Location = new System.Drawing.Point(12, 177);
+            this.tctSupplierName.Location = new System.Drawing.Point(12, 256);
             this.tctSupplierName.Name = "tctSupplierName";
             this.tctSupplierName.Size = new System.Drawing.Size(100, 20);
             this.tctSupplierName.TabIndex = 9;

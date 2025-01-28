@@ -37,24 +37,26 @@ namespace GourmetShop.Winforms
         // Button Methods
         private void button1_Click(object sender, EventArgs e)
         {
-            this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
-        }
-        private void AddProductButton_Click(object sender, EventArgs e)
-        {
             using (var addProductForm = new AddProductForm())
             {
                 if (addProductForm.ShowDialog() == DialogResult.OK)
                 {
                     var newProduct = addProductForm.NewProduct;
 
-                    _productRepository.AddProduct(newProduct); 
+                    _productRepository.AddProduct(newProduct);
 
                     this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
                 }
             }
+            //this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
+            //this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
+        }
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
+        //Add Supplier button
         private void button4_Click(object sender, EventArgs e)
         {
             using (var addSupplierForm = new AddSupplierForm())

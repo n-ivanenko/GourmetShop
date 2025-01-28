@@ -2,7 +2,7 @@
 GO
 
 -- Get all products
-CREATE PROCEDURE GetAllProducts
+CREATE OR ALTER PROCEDURE GetAllProducts
 AS
 BEGIN
     SELECT * FROM Product;
@@ -10,18 +10,21 @@ END;
 GO
 
 -- Insert a new product
-CREATE PROCEDURE InsertProduct
+CREATE OR ALTER PROCEDURE InsertProduct
+	@Id INT,
     @Name NVARCHAR(100),
     @Price DECIMAL(18,2)
 AS
 BEGIN
-    INSERT INTO Product (ProductName, UnitPrice) 
-    VALUES (@Name, @Price);
+SET IDENTITY_INSERT Product ON;
+    INSERT INTO Product (Id, ProductName, UnitPrice) 
+    VALUES (@Id, @Name, @Price);
+	SET IDENTITY_INSERT Product OFF;
 END;
 GO
 
 -- Update an existing product
-CREATE PROCEDURE UpdateProduct
+CREATE OR ALTER PROCEDURE  UpdateProduct
     @Id INT,
     @Name NVARCHAR(100),
     @Price DECIMAL(18,2)
@@ -34,7 +37,7 @@ END;
 GO
 
 -- Delete a product
-CREATE PROCEDURE DeleteProduct
+CREATE OR ALTER PROCEDURE DeleteProduct
     @Id INT
 AS
 BEGIN
@@ -43,7 +46,7 @@ END;
 GO
 
 -- Get all suppliers
-CREATE PROCEDURE GetAllSuppliers
+CREATE OR ALTER PROCEDURE GetAllSuppliers
 AS
 BEGIN
     SELECT * FROM Supplier;
@@ -51,18 +54,21 @@ END;
 GO
 
 -- Insert a new supplier
-CREATE PROCEDURE InsertSupplier
+CREATE OR ALTER PROCEDURE InsertSupplier
+	@Id INT,
     @Name NVARCHAR(100),
     @Contact NVARCHAR(100)
 AS
 BEGIN
-    INSERT INTO Supplier (CompanyName, ContactName) 
-    VALUES (@Name, @Contact);
+SET IDENTITY_INSERT Supplier ON;
+    INSERT INTO Supplier (Id, CompanyName, ContactName) 
+    VALUES (@Id, @Name, @Contact);
+	SET IDENTITY_INSERT Supplier OFF;
 END;
 GO
 
 -- Update an existing supplier
-CREATE PROCEDURE UpdateSupplier
+CREATE OR ALTER PROCEDURE UpdateSupplier
     @Id INT,
     @Name NVARCHAR(100),
     @Contact NVARCHAR(100)
@@ -75,7 +81,7 @@ END;
 GO
 
 -- Delete a supplier
-CREATE PROCEDURE DeleteSupplier
+CREATE OR ALTER PROCEDURE DeleteSupplier
     @Id INT
 AS
 BEGIN

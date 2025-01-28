@@ -29,6 +29,7 @@ namespace GourmetShop.Winforms
 
                 NewSupplier = new Supplier
                 {
+                    SupplierId = txtSupplierId.Text,
                     CompanyName = txtCompanyName.Text,
                     ContactName = txtContactName.Text,
                 };
@@ -43,6 +44,10 @@ namespace GourmetShop.Winforms
                 this.Close();
             }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 

@@ -30,8 +30,10 @@ namespace GourmetShop.Winforms
 
             NewProduct = new Product
             {
+                ProductId = txtProductId.Text,
+                SupplierId = txtSupplierId.Text,
                 ProductName = txtProductName.Text,
-                UnitPrice = decimal.Parse(txtUnitPrice.Text) 
+                UnitPrice = decimal.Parse(txtUnitPrice.Text)
             };
 
             this.DialogResult = DialogResult.OK;
@@ -44,5 +46,9 @@ namespace GourmetShop.Winforms
             this.Close();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
