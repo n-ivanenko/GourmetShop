@@ -60,12 +60,8 @@ namespace GourmetShop.Winforms
             this.supplierTableAdapter = new GourmetShop.Winforms.GourmetShopDataSetTableAdapters.SupplierTableAdapter();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnEditProduct = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.btnEditSupplier = new System.Windows.Forms.Button();
-            this.btnDeleteSupplier = new System.Windows.Forms.Button();
-            this.tctSupplierName = new System.Windows.Forms.TextBox();
-            this.xtxProductName = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -290,16 +286,6 @@ namespace GourmetShop.Winforms
             this.btnEditProduct.UseVisualStyleBackColor = true;
             this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(174, 196);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(90, 23);
-            this.btnDeleteProduct.TabIndex = 5;
-            this.btnDeleteProduct.Text = "Delete Product";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
-            // 
             // btnAddSupplier
             // 
             this.btnAddSupplier.Location = new System.Drawing.Point(12, 415);
@@ -320,43 +306,13 @@ namespace GourmetShop.Winforms
             this.btnEditSupplier.UseVisualStyleBackColor = true;
             this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
-            // btnDeleteSupplier
-            // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(174, 415);
-            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
-            this.btnDeleteSupplier.Size = new System.Drawing.Size(90, 23);
-            this.btnDeleteSupplier.TabIndex = 8;
-            this.btnDeleteSupplier.Text = "Delete Supplier";
-            this.btnDeleteSupplier.UseVisualStyleBackColor = true;
-            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
-            // 
-            // tctSupplierName
-            // 
-            this.tctSupplierName.Location = new System.Drawing.Point(12, 256);
-            this.tctSupplierName.Name = "tctSupplierName";
-            this.tctSupplierName.Size = new System.Drawing.Size(100, 20);
-            this.tctSupplierName.TabIndex = 9;
-            this.tctSupplierName.TextChanged += new System.EventHandler(this.tctSupplierName_TextChanged);
-            // 
-            // xtxProductName
-            // 
-            this.xtxProductName.Location = new System.Drawing.Point(12, 42);
-            this.xtxProductName.Name = "xtxProductName";
-            this.xtxProductName.Size = new System.Drawing.Size(100, 20);
-            this.xtxProductName.TabIndex = 10;
-            this.xtxProductName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.xtxProductName);
-            this.Controls.Add(this.tctSupplierName);
-            this.Controls.Add(this.btnDeleteSupplier);
             this.Controls.Add(this.btnEditSupplier);
             this.Controls.Add(this.btnAddSupplier);
-            this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditProduct);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.dvgSupplier);
@@ -415,12 +371,8 @@ namespace GourmetShop.Winforms
         private System.Windows.Forms.ToolStripMenuItem viewProductsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSuppliersToolStripMenuItem;
         private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.Button btnEditSupplier;
-        private System.Windows.Forms.Button btnDeleteSupplier;
-        private System.Windows.Forms.TextBox tctSupplierName;
-        private System.Windows.Forms.TextBox xtxProductName;
     }
 }
 

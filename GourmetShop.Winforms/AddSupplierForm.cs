@@ -29,13 +29,13 @@ namespace GourmetShop.Winforms
 
                 NewSupplier = new Supplier
                 {
-                    SupplierId = txtSupplierId.Text,
                     CompanyName = txtCompanyName.Text,
                     ContactName = txtContactName.Text,
                 };
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+
             }
 
             private void btnCancel_Click(object sender, EventArgs e)

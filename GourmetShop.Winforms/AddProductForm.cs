@@ -30,7 +30,6 @@ namespace GourmetShop.Winforms
 
             NewProduct = new Product
             {
-                ProductId = txtProductId.Text,
                 SupplierId = txtSupplierId.Text,
                 ProductName = txtProductName.Text,
                 UnitPrice = decimal.Parse(txtUnitPrice.Text)

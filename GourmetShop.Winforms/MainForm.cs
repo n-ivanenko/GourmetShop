@@ -34,7 +34,7 @@ namespace GourmetShop.Winforms
             this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
 
         }
-        // Button Methods
+        // Add Product button
         private void button1_Click(object sender, EventArgs e)
         {
             using (var addProductForm = new AddProductForm())
@@ -48,15 +48,22 @@ namespace GourmetShop.Winforms
                     this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
                 }
             }
-            //this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            //this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
+        }
+
+        // Edit Product Button
+        private void btnEditProduct_Click(object sender, EventArgs e)
+        {
+
+            string connectionString = "Data Source = localhost; Initial Catalog = GourmetShop; Integrated Security = True; Encrypt = False";
+            var updateForm = new UpdateProductForm(connectionString);
+            updateForm.ShowDialog();
         }
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             
         }
 
-        //Add Supplier button
+        // Add Supplier button
         private void button4_Click(object sender, EventArgs e)
         {
             using (var addSupplierForm = new AddSupplierForm())
@@ -71,7 +78,16 @@ namespace GourmetShop.Winforms
                 }
             }
         }
-        //Menu Methods
+
+        // Edit Supplier Button
+        private void btnEditSupplier_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source = localhost; Initial Catalog = GourmetShop; Integrated Security = True; Encrypt = False";
+            var updateForm = new UpdateSuppliersForm(connectionString);
+            updateForm.ShowDialog();
+        }
+
+        // Menu Methods
         private void productsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
@@ -94,143 +110,29 @@ namespace GourmetShop.Winforms
             dvgSupplier.DataSource = suppliers.ToList();
         }
 
-
-
-        
-        //IGNORE COMMENTED OUT CODE//
-       
-
         private void dvgProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    var productId = (int)dvgProducts.Rows[e.RowIndex].Cells[0].Value; // Assuming the ID is in the first column
-            //    var product = _productRepository.GetProductById(productId);
-            //    if (e.ColumnIndex == dvgProducts.Columns["Edit"].Index)
-            //    {
-            //        // Edit product
-            //        using (var editProductForm = new EditProductForm(product))
-            //        {
-            //            if (editProductForm.ShowDialog() == DialogResult.OK)
-            //            {
-            //                var updatedProduct = editProductForm.UpdatedProduct;
-            //                _productRepository.UpdateProduct(updatedProduct);
-            //                this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            //            }
-            //        }
-            //    }
-            //    else if (e.ColumnIndex == dvgProducts.Columns["Delete"].Index)
-            //    {
-            //        // Delete product
-            //        var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
-            //        if (result == DialogResult.Yes)
-            //        {
-            //            _productRepository.DeleteProduct(productId);
-            //            this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            //        }
-            //    }
-            //}
+            
         }
 
         private void dvgSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    var supplierId = (int)dvgSupplier.Rows[e.RowIndex].Cells[0].Value; // Assuming the ID is in the first column
-            //    var supplier = _productRepository.GetSupplierById(supplierId);
-            //    if (e.ColumnIndex == dvgSupplier.Columns["Edit"].Index)
-            //    {
-            //        // Edit supplier
-            //        using (var editSupplierForm = new EditSupplierForm(supplier))
-            //        {
-            //            if (editSupplierForm.ShowDialog() == DialogResult.OK)
-            //            {
-            //                var updatedSupplier = editSupplierForm.UpdatedSupplier;
-            //                _productRepository.UpdateSupplier(updatedSupplier);
-            //                this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
-            //            }
-            //        }
-            //    }
-            //    else if (e.ColumnIndex == dvgSupplier.Columns["Delete"].Index)
-            //    {
-            //        // Delete supplier
-            //        var result = MessageBox.Show("Are you sure you want to delete this supplier?", "Delete Supplier", MessageBoxButtons.YesNo);
-            //        if (result == DialogResult.Yes)
-            //        {
-            //            _productRepository.DeleteSupplier(supplierId);
-            //            this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
-            //        }
-            //    }
-            //}
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            //string searchText = textBox2.Text.ToLower();
-            //var filteredProducts = _productRepository.GetAllProducts()
-            //    .Where(p => p.Name.ToLower().Contains(searchText)).ToList();
-            //this.productBindingSource.DataSource = filteredProducts;
+
         }
 
         private void tctSupplierName_TextChanged(object sender, EventArgs e)
         {
-            //string searchText = tctSupplierName.Text.ToLower();
-            //var filteredSuppliers = _productRepository.GetAllSuppliers()
-            //    .Where(s => s.Name.ToLower().Contains(searchText)).ToList();
-            //this.supplierBindingSource.DataSource = filteredSuppliers;
-        }
-
-        private void btnEditProduct_Click(object sender, EventArgs e)
-        {
-            //var selectedRow = dvgProducts.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-            //if (selectedRow != null)
-            //{
-            //    var productId = (int)selectedRow.Cells[0].Value;
-            //    var product = _productRepository.GetProductById(productId);
-            //    using (var editProductForm = new EditProductForm(product))
-            //    {
-            //        if (editProductForm.ShowDialog() == DialogResult.OK)
-            //        {
-            //            var updatedProduct = editProductForm.UpdatedProduct;
-            //            _productRepository.UpdateProduct(updatedProduct);
-            //            this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            //        }
-            //    }
-            //}
+          
         }
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            //var selectedRow = dvgProducts.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-            //if (selectedRow != null)
-            //{
-            //    var productId = (int)selectedRow.Cells[0].Value;
-            //    var result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product", MessageBoxButtons.YesNo);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        _productRepository.DeleteProduct(productId);
-            //        this.productTableAdapter.Fill(this.gourmetShopDataSet.Product);
-            //    }
-            //}
-        }
-
-        private void btnEditSupplier_Click(object sender, EventArgs e)
-        {
-            //var selectedRow = dvgSupplier.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-            //if (selectedRow != null)
-            //{
-            //    var supplierId = (int)selectedRow.Cells[0].Value;
-            //    var supplier = _productRepository.GetSupplierById(supplierId);
-            //    using (var editSupplierForm = new EditSupplierForm(supplier))
-            //    {
-            //        if (editSupplierForm.ShowDialog() == DialogResult.OK)
-            //        {
-            //            var updatedSupplier = editSupplierForm.UpdatedSupplier;
-            //            _productRepository.UpdateSupplier(updatedSupplier);
-            //            this.supplierTableAdapter.Fill(this.gourmetShopDataSet.Supplier);
-            //        }
-            //    }
-            //}
+            
         }
     }
 }

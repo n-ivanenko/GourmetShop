@@ -54,7 +54,6 @@ namespace GourmetShop.DataAccess.Repositories
                 using (var command = new SqlCommand("InsertProduct", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", product.Id);
                     command.Parameters.AddWithValue("@SupplierId", product.SupplierId);
                     command.Parameters.AddWithValue("@Name", product.ProductName);
                     command.Parameters.AddWithValue("@Price", product.UnitPrice);
@@ -67,34 +66,25 @@ namespace GourmetShop.DataAccess.Repositories
 
         public void UpdateProduct(Product product)
         {
-            //using (var connection = new SqlConnection(_connectionString))
-            //{
-            //    using (var command = new SqlCommand("UpdateProduct", connection))
-            //    {
-            //        command.CommandType = System.Data.CommandType.StoredProcedure;
-            //        command.Parameters.AddWithValue("@Id", product.Id);
-            //        command.Parameters.AddWithValue("@Name", product.ProductName);
-            //        command.Parameters.AddWithValue("@Price", product.UnitPrice);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("UpdateProduct", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", product.Id);
+                    command.Parameters.AddWithValue("@SupplierId", product.SupplierId);
+                    command.Parameters.AddWithValue("@Name", product.ProductName);
+                    command.Parameters.AddWithValue("@Price", product.UnitPrice);
 
-            //        connection.Open();
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public void DeleteProduct(int id)
         {
-            //using (var connection = new SqlConnection(_connectionString))
-            //{
-            //    using (var command = new SqlCommand("DeleteProduct", connection))
-            //    {
-            //        command.CommandType = System.Data.CommandType.StoredProcedure;
-            //        command.Parameters.AddWithValue("@Id", id);
-
-            //        connection.Open();
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+           
         }
         public Product GetProductById(int id)
         {

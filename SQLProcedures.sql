@@ -11,28 +11,26 @@ GO
 
 -- Insert a new product
 CREATE OR ALTER PROCEDURE InsertProduct
-	@Id INT,
 	@SupplierId INT,
     @Name NVARCHAR(100),
     @Price DECIMAL(18,2)
 AS
 BEGIN
-SET IDENTITY_INSERT Product ON;
-    INSERT INTO Product (Id, SupplierID, ProductName, UnitPrice) 
-    VALUES (@Id, @SupplierId, @Name, @Price);
-	SET IDENTITY_INSERT Product OFF;
+    INSERT INTO Product (SupplierID, ProductName, UnitPrice) 
+    VALUES ( @SupplierId, @Name, @Price);
 END;
 GO
 
 -- Update an existing product
 CREATE OR ALTER PROCEDURE  UpdateProduct
     @Id INT,
+	@SupplierId INT,
     @Name NVARCHAR(100),
     @Price DECIMAL(18,2)
 AS
 BEGIN
     UPDATE Product
-    SET ProductName = @Name, UnitPrice = @Price
+    SET ProductName = @Name, UnitPrice = @Price, SupplierId = @SupplierId
     WHERE Id = @Id;
 END;
 GO
@@ -56,15 +54,12 @@ GO
 
 -- Insert a new supplier
 CREATE OR ALTER PROCEDURE InsertSupplier
-	@Id INT,
     @Name NVARCHAR(100),
     @Contact NVARCHAR(100)
 AS
 BEGIN
-SET IDENTITY_INSERT Supplier ON;
-    INSERT INTO Supplier (Id, CompanyName, ContactName) 
-    VALUES (@Id, @Name, @Contact);
-	SET IDENTITY_INSERT Supplier OFF;
+    INSERT INTO Supplier (CompanyName, ContactName) 
+    VALUES (@Name, @Contact);
 END;
 GO
 

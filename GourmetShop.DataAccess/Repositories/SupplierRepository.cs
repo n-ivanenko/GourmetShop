@@ -54,7 +54,6 @@ namespace GourmetShop.DataAccess.Repositories
                 using (var command = new SqlCommand("InsertSupplier", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Id", supplier.Id);
                     command.Parameters.AddWithValue("@Name", supplier.CompanyName);
                     command.Parameters.AddWithValue("@Contact", supplier.ContactName);
 
@@ -64,36 +63,25 @@ namespace GourmetShop.DataAccess.Repositories
             }
         }
 
-        public void UpdateSupplier(Supplier supplier)
+        public void UpdateSupplier(int supplierId, string updatedCompanyName, string updatedContactName)
         {
-            //using (var connection = new SqlConnection(_connectionString))
-            //{
-            //    using (var command = new SqlCommand("UpdateSupplier", connection))
-            //    {
-            //        command.CommandType = System.Data.CommandType.StoredProcedure;
-            //        command.Parameters.AddWithValue("@Id", supplier.Id);
-            //        command.Parameters.AddWithValue("@Name", supplier.CompanyName);
-            //        command.Parameters.AddWithValue("@Contact", supplier.ContactName);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("UpdateSupplier", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", supplierId);
+                    command.Parameters.AddWithValue("@Name", updatedCompanyName);
+                    command.Parameters.AddWithValue("@Contact", updatedContactName);
 
-            //        connection.Open();
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public void DeleteSupplier(int id)
         {
-            //using (var connection = new SqlConnection(_connectionString))
-            //{
-            //    using (var command = new SqlCommand("DeleteSupplier", connection))
-            //    {
-            //        command.CommandType = System.Data.CommandType.StoredProcedure;
-            //        command.Parameters.AddWithValue("@Id", id);
-
-            //        connection.Open();
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+           
         }
         public Supplier GetSupplierById(int id)
         {

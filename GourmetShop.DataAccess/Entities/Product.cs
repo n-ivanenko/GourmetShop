@@ -14,6 +14,5 @@ namespace GourmetShop.DataAccess.Entities
         public string SupplierId {  get; set; }
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }
-        public string ProductId { get; set; }
     }
 }
