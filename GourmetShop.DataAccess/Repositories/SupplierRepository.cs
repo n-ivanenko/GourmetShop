@@ -35,8 +35,8 @@ namespace GourmetShop.DataAccess.Repositories
                             var supplier = new Supplier
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                CompanyName = reader.GetString(reader.GetOrdinal("Name")),
-                                ContactName = reader.GetString(reader.GetOrdinal("Contact"))
+                                CompanyName = reader.GetString(reader.GetOrdinal("CompanyName")),
+                                ContactName = reader.GetString(reader.GetOrdinal("ContactName"))
                             };
                             suppliers.Add(supplier);
                         }

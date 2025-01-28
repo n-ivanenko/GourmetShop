@@ -35,8 +35,8 @@ namespace GourmetShop.DataAccess.Repositories
                             var product = new Product
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                ProductName = reader.GetString(reader.GetOrdinal("Name")),
-                                UnitPrice = reader.GetDecimal(reader.GetOrdinal("Price"))
+                                ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
+                                UnitPrice = reader.GetDecimal(reader.GetOrdinal("UnitPrice"))
                             };
                             products.Add(product);
                         }
