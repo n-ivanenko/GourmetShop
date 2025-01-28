@@ -12,13 +12,14 @@ GO
 -- Insert a new product
 CREATE OR ALTER PROCEDURE InsertProduct
 	@Id INT,
+	@SupplierId INT,
     @Name NVARCHAR(100),
     @Price DECIMAL(18,2)
 AS
 BEGIN
 SET IDENTITY_INSERT Product ON;
-    INSERT INTO Product (Id, ProductName, UnitPrice) 
-    VALUES (@Id, @Name, @Price);
+    INSERT INTO Product (Id, SupplierID, ProductName, UnitPrice) 
+    VALUES (@Id, @SupplierId, @Name, @Price);
 	SET IDENTITY_INSERT Product OFF;
 END;
 GO
