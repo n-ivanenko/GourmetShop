@@ -62,6 +62,8 @@ namespace GourmetShop.Winforms
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.btnEditSupplier = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnDeletSupplier = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -306,11 +308,33 @@ namespace GourmetShop.Winforms
             this.btnEditSupplier.UseVisualStyleBackColor = true;
             this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(175, 195);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(91, 23);
+            this.btnDeleteProduct.TabIndex = 8;
+            this.btnDeleteProduct.Text = "Delete Product";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click_1);
+            // 
+            // btnDeletSupplier
+            // 
+            this.btnDeletSupplier.Location = new System.Drawing.Point(175, 415);
+            this.btnDeletSupplier.Name = "btnDeletSupplier";
+            this.btnDeletSupplier.Size = new System.Drawing.Size(91, 23);
+            this.btnDeletSupplier.TabIndex = 9;
+            this.btnDeletSupplier.Text = "Delete Supplier";
+            this.btnDeletSupplier.UseVisualStyleBackColor = true;
+            this.btnDeletSupplier.Click += new System.EventHandler(this.btnDeletSupplier_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeletSupplier);
+            this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditSupplier);
             this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.btnEditProduct);
@@ -373,6 +397,8 @@ namespace GourmetShop.Winforms
         private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.Button btnEditSupplier;
+        private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.Button btnDeletSupplier;
     }
 }
 

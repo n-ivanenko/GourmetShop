@@ -134,5 +134,19 @@ namespace GourmetShop.Winforms
         {
             
         }
+
+        private void btnDeleteProduct_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source = localhost; Initial Catalog = GourmetShop; Integrated Security = True; Encrypt = False";
+            DeleteProductForm productForm = new DeleteProductForm(connectionString);
+            productForm.Show();
+        }
+
+        private void btnDeletSupplier_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source = localhost; Initial Catalog = GourmetShop; Integrated Security = True; Encrypt = False";
+            DeleteSupplierForm supplierForm = new DeleteSupplierForm(connectionString);
+            supplierForm.Show();
+        }
     }
 }

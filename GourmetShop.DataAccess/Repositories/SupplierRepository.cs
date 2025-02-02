@@ -81,7 +81,22 @@ namespace GourmetShop.DataAccess.Repositories
 
         public void DeleteSupplier(int id)
         {
-           
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("DeleteSupplier", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("Supplier not found or already deleted.");
+                    }
+                }
+            }
         }
         public Supplier GetSupplierById(int id)
         {

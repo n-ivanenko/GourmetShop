@@ -58,6 +58,18 @@
     <Compile Include="AddSupplierForm.Designer.cs">
       <DependentUpon>AddSupplierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteProductForm.Designer.cs">
+      <DependentUpon>DeleteProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSupplierForm.Designer.cs">
+      <DependentUpon>DeleteSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GourmetShopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSupplierForm.resx">
       <DependentUpon>AddSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteProductForm.resx">
+      <DependentUpon>DeleteProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSupplierForm.resx">
+      <DependentUpon>DeleteSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

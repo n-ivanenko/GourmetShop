@@ -84,7 +84,22 @@ namespace GourmetShop.DataAccess.Repositories
 
         public void DeleteProduct(int id)
         {
-           
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                using (var command = new SqlCommand("DeleteProduct", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("Product not found or already deleted.");
+                    }
+                }
+            }
         }
         public Product GetProductById(int id)
         {
