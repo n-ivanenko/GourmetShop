@@ -1,4 +1,4 @@
-﻿USE GourmetShop
+USE GourmetShop
 GO
 
 -- Get all products
